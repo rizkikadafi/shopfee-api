@@ -6,7 +6,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/api/bin/www/$1"
+      "destination": "/api/bin/www"
     }
   ]
 }
