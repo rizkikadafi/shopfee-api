@@ -5,6 +5,10 @@
       "destination": "/api/bin/www"
     },
     {
+      "source": "/api/bin/(.*)",
+      "destination": "/api/bin/www"
+    },
+    {
       "source": "/(.*)",
       "destination": "/api/bin/www"
     }
