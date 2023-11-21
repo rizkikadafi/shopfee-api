@@ -14,6 +14,7 @@ router.delete('/', requireLogin, async (req, res) => {
   const coffeeId = req.query.id;
   try {
     await pool.query("DELETE FROM coffee WHERE coffee_id=$1", [coffeeId]);
+    res.redirect('/');
   } catch (error) {
     res.json({'success': false, 'message': error});
   }
