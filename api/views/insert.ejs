@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tambah Kopi</title>
+</head>
+<body>
+  <h1>Tambah Kopi</h1>
+  <form action="/insert" method="post" enctype="multipart/form-data">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" required></textarea>
+    <br>
+    <label for="rating">Rating:</label>
+    <input type="number" id="rating" name="rating" min="1" max="5" step="0.1" required>
+    <br>
+    <label for="small_price">Small Price:</label>
+    <input type="number" id="small_price" name="small_price" required>
+    <br>
+    <label for="medium_price">Medium Price:</label>
+    <input type="number" id="medium_price" name="medium_price" required>
+    <br>
+    <label for="large_price">Large Price:</label>
+    <input type="number" id="large_price" name="large_price" required>
+    <br>
+    <label for="image">Image URL:</label>
+    <input type="file" id="image" name="image" required>
+    <br>
+    <button type="submit">Add Coffee</button>
+  </form>
+
+  <script src="javascripts/insert.js"></script>
+</body>
+</html>

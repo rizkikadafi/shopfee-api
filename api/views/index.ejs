@@ -5,7 +5,12 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1>Shopfee List Coffee</h1>
+    <header>
+      <h1>Shopfee List Coffee</h1>
+      <div class="action">
+        <a href="/insert">Tambah</a>
+      </div>
+    </header>
     <table border="1">
       <tr>
         <th rowspan="2">Nama</th>
@@ -13,6 +18,7 @@
         <th rowspan="2">Rating</th>
         <th colspan="3">Harga</th>
         <th rowspan="2">Gambar</th>
+        <th rowspan="2">Action</th>
       </tr>
       <tr>
         <th>Small</th>
@@ -28,6 +34,7 @@
         <td><%= coffee.medium_price %></td>
         <td><%= coffee.large_price %></td>
         <td><img src="<%= coffee.image %>" alt="<%= coffee.name %>"></td>
+        <td><a href="/delete?id=<%= coffee.coffee_id %>">Hapus</a> | <a href="/edit?id=<%= coffee.coffee_id %>">Edit</a></td>
        </tr>
       <% }) %>
     </table>

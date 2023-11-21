@@ -16,3 +16,9 @@ table {
 th, td {
   padding: .5rem;
 }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
