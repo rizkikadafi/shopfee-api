@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const pool = require('../db');
 const requireLogin = (req, res, next) => {
   if (req.session.user) {
     next();
