@@ -8,7 +8,8 @@
     <header>
       <h1>Shopfee List Coffee</h1>
       <div class="action">
-        <a href="/insert">Tambah</a>
+        <a href="/insert">Tambah</a> |
+        <a href="/logout">Logout</a>
       </div>
     </header>
     <table border="1">
@@ -34,9 +35,13 @@
         <td><%= coffee.medium_price %></td>
         <td><%= coffee.large_price %></td>
         <td><img src="<%= coffee.image %>" alt="<%= coffee.name %>"></td>
-        <td><a href="/delete?id=<%= coffee.coffee_id %>">Hapus</a> | <a href="/edit?id=<%= coffee.coffee_id %>">Edit</a></td>
+        <td>
+          <button onclick="confirmDelete('<%= coffee.coffee_id %>');" id="delete">Hapus</button> | 
+          <button onclick="window.location.href = '/edit?id=<%= coffee.coffee_id %>';" id="edit">Edit</button>
+        </td>
        </tr>
       <% }) %>
+      <script src="javascripts/delete.js"></script>
     </table>
   </body>
 </html>

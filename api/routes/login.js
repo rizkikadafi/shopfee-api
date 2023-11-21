@@ -5,6 +5,9 @@ const pool = require('../db');
 const router = express.Router();
 
 router.get('/', (req, res) => {
+  if(req.session && req.session.user) {
+    res.redirect('/');
+  }
   res.render('login');
 });
 

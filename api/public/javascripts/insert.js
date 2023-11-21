@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
           rating,
           small_price,
           medium_price,
-          large_price
+          large_price,
         }),
       });
 
@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', function () {
         alert(data.message);
       }
     } catch (error) {
-      alert('Terjadi kesalahan saat login');
+      console.log(error);
+      alert('Terjadi kesalahan menambahkan data');
     }
   });
 });

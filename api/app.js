@@ -8,7 +8,10 @@ require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 var adminLoginRouter = require('./routes/login');
+var adminLogoutRouter = require('./routes/logout');
 var insertRouter = require('./routes/insert');
+var editRouter = require('./routes/edit');
+var deleteRouter = require('./routes/delete');
 
 var coffeeRouter = require('./routes/coffee');
 
@@ -31,7 +34,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/login', adminLoginRouter);
+app.use('/logout', adminLogoutRouter);
 app.use('/insert', insertRouter);
+app.use('/edit', editRouter);
+app.use('/delete', deleteRouter);
 
 app.use('/api/v1/coffees', coffeeRouter);
 
