@@ -1,6 +1,5 @@
 const  express = require('express');
 const router = express.Router();
-const { getAllCoffee } = require('../controller/coffee')
 const pool = require('../db');
 
 router.get('/', async function(req, res, next) {

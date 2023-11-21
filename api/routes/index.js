@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-const { getAllCOffee } = require('../controller/coffee');
 const requireLogin = (req, res, next) => {
   if (req.session.user) {
     next();
@@ -10,6 +9,11 @@ const requireLogin = (req, res, next) => {
 };
 
 
-router.get('/', requireLogin, getAllCOffee);
+router.get('/', requireLogin, async (req, res) => {
+  await pool.query("SELECT * FROM coffee", (error, results) => {
+    if (error) throw error;
+    res.render('index', { coffees: results.rows });
+  })
+});
 
 module.exports = router;
