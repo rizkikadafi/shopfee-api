@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
   form.addEventListener('submit', async function (event) {
     event.preventDefault();
 
-    const formData = new FormData(form);
-
     const response = await fetch('/insert', {
       method: 'POST',
       body: formData,

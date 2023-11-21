@@ -36,7 +36,6 @@ const addNewCoffee = async (req, res) => {
     const base64Image = imageBuffer.toString('base64');
 
     const imageUrl = await uploadImage(process.env.IMAGE_HOST_API_KEY, base64Image);
-    // console.log(imageUrl);
 
     const query = `
     INSERT INTO coffee (name, description, rating, small_price, medium_price, large_price, image)
@@ -61,11 +60,6 @@ const addNewCoffee = async (req, res) => {
     await pool.query(query, values);
     res.json({ success: true, message: 'Data berhasil ditambahkan'});
 
-    // console.log(req.file);
-    // console.log(req.body);
-    // console.log(base64Image);
-
-    // res.redirect('/');
   } catch (error) {
     console.error('Error adding coffee:', error);
     res.status(500).send('Internal Server Error');
