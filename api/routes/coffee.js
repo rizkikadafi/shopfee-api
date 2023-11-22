@@ -5,7 +5,7 @@ const pool = require('../db');
 router.get('/', async function(req, res, next) {
   try {
     const result = await pool.query('SELECT * FROM coffee');
-    res.json(result.rows);
+    res.json({'coffees': result.rows});
   } catch (error) {
     console.error(error);
     res.status(500).send('Internal Server Error');
